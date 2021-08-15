@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 @Transactional
 @RequiredArgsConstructor
-public class UserRepositoryImpl implements UserRepository {
+public class UsersRepositoryImpl implements UsersRepository {
     private SessionFactory sessionFactory;
 
     @Override

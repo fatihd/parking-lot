@@ -1,11 +1,7 @@
 package com.tarnet.servlets;
 
-import com.tarnet.deneme.Excluded;
-import com.tarnet.deneme.Greeter;
 import com.tarnet.deneme.MasterRepository;
 import com.tarnet.domain.ZzzMaster;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletException;

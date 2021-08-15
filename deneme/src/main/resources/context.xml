@@ -16,8 +16,13 @@
     </context:component-scan>
 
 
-<!--    <bean class="com.tarnet.excluded.OtherServiceImpl"/>-->
 
+<!--
+    <bean class="com.tarnet.excluded.OtherServiceImpl"/>
+-->
+<!--
     <bean id="print" class="com.tarnet.deneme.PrintServiceFactory" />
+-->
+
 
 </beans>

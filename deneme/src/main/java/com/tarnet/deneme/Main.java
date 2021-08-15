@@ -1,6 +1,5 @@
 package com.tarnet.deneme;
 
-import com.tarnet.domain.ZzzMaster;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,21 +9,10 @@ public class Main {
                 "context.xml",
                 "hibernate-config.xml");
 
-        Greeter greeter = applicationContext.getBean(Greeter.class);
-        Excluded excluded = applicationContext.getBean(Excluded.class);
+        UsersRepository usersRepository = applicationContext.getBean(UsersRepository.class);
 
-        greeter.greet();
+        usersRepository.insert();
 
-        MasterRepository repository = applicationContext.getBean(MasterRepository.class);
-
-//        repository.insert();
-
-//        repository.update();
-
-//        repository.delete();
-
-//        repository.list();
-//        repository.showOne();
 
     }
 }

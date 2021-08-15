@@ -4,7 +4,7 @@ import com.tarnet.domain.ZzzUsers;
 
 import java.util.List;
 
-public interface UserRepository {
+public interface UsersRepository {
     void insert();
 
     List<ZzzUsers> list();
