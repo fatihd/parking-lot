@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.tarnet.domain.ZzzUser" table="ZZZ_USER">
+        <id name="id" column="ID">
+            <generator class="sequence">
+                <param name="sequence_name">SEQ_ZZZ_USER</param>
+            </generator>
+        </id>
+
+        <version name="version"/>
+
+        <property name="ad" column="AD" />
+
+        <bag name="spots" table="ZZZ_SPOT" cascade="all-delete-orphan" inverse="true"
+             lazy="true">
+            <key column="USER_ID"/>
+            <one-to-many class="com.tarnet.domain.ZzzSpot"/>
+        </bag>
+
+    </class>
+</hibernate-mapping>

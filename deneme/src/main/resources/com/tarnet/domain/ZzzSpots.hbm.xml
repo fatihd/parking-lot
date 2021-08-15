@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.tarnet.domain.ZzzSpot" table="ZZZ_SPOT">
+        <id name="id" column="ID">
+            <generator class="sequence">
+                <param name="sequence_name">SEQ_ZZZ_SPOT</param>
+            </generator>
+        </id>
+
+        <many-to-one name="user" lazy="false" class="com.tarnet.domain.ZzzUser"
+                     column="USER_ID" not-null="true"/>
+
+    </class>
+</hibernate-mapping>
