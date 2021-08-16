@@ -1,9 +1,24 @@
 package com.tarnet.domain;
 
+import lombok.Data;
+import lombok.experimental.FieldNameConstants;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@FieldNameConstants
+@Data
 public class ZzzSpots {
     private Long id;
 
     private ZzzUsers users;
+
+    private List<ZzzReservations> reservations = new ArrayList<>();
+
+    public void addReservations(ZzzReservations r){
+        r.setSpots(this);
+        this.getReservations().add(r);
+    }
 
     public Long getId() {
         return id;

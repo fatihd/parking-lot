@@ -7,6 +7,8 @@ import java.util.List;
 public interface UsersRepository {
     void insert();
 
+    /*void delete();*/
+
     List<ZzzUsers> list();
 
 }

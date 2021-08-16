@@ -9,6 +9,12 @@
             </generator>
         </id>
 
+        <bag name="reservations" table="ZZZ_RESERVATIONS" cascade="all-delete-orphan" inverse="true"
+             lazy="true">
+            <key column="SPOT_ID"/>
+            <one-to-many class="com.tarnet.domain.ZzzReservations"/>
+        </bag>
+
         <many-to-one name="users" lazy="false" class="com.tarnet.domain.ZzzUsers"
                      column="USER_ID" not-null="true"/>
 

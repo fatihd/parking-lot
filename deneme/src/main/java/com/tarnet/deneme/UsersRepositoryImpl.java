@@ -1,5 +1,7 @@
 package com.tarnet.deneme;
 
+import com.tarnet.domain.ZzzMaster;
+import com.tarnet.domain.ZzzReservations;
 import com.tarnet.domain.ZzzSpots;
 import com.tarnet.domain.ZzzUsers;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +17,7 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class UsersRepositoryImpl implements UsersRepository {
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     @Override
     public void insert(){
@@ -30,11 +32,30 @@ public class UsersRepositoryImpl implements UsersRepository {
                 ZzzSpots s = new ZzzSpots();
 
                 u.addSpots(s);
+
+                for (int k = 0; k< 3; k++){
+                    ZzzReservations r = new ZzzReservations();
+
+                    s.addReservations(r);
+
+                }
             }
 
             session.merge(u);
         }
     }
+
+/*    @Override
+    public void delete() {
+        Session session = sessionFactory.getCurrentSession();
+
+        ZzzUsers zzzUsers = session.get(ZzzUsers.class, -2L);
+
+        if (!zzzMaster.getAd().contains("DENEME"))
+            throw new IllegalArgumentException("bu kayit silinemez!");
+
+        session.delete(zzzUsers);
+    }*/
 
     @Override
     public List<ZzzUsers> list() {

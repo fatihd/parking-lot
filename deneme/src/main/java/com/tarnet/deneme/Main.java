@@ -13,6 +13,8 @@ public class Main {
 
         usersRepository.insert();
 
+        //usersRepository.delete();
 
+        //usersRepository.list();
     }
 }
