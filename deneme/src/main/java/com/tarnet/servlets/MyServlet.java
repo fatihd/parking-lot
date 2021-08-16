@@ -1,7 +1,9 @@
 package com.tarnet.servlets;
 
 import com.tarnet.deneme.MasterRepository;
+import com.tarnet.deneme.UsersRepository;
 import com.tarnet.domain.ZzzMaster;
+import com.tarnet.domain.ZzzUsers;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletException;
@@ -19,9 +21,13 @@ public class MyServlet extends HttpServlet {
         WebApplicationContext applicationContext = (WebApplicationContext) req.getServletContext()
                 .getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
 
-        MasterRepository repository = applicationContext.getBean(MasterRepository.class);
+        /*MasterRepository repository = applicationContext.getBean(MasterRepository.class);*/
 
-        List<ZzzMaster> list = repository.list();
+        /*List<ZzzMaster> list = repository.list();*/
+
+        UsersRepository usersRepository = applicationContext.getBean(UsersRepository.class);
+
+        List<ZzzUsers> usersList = usersRepository.list();
 
 
         PrintWriter printWriter = new PrintWriter(resp.getOutputStream());
@@ -32,9 +38,15 @@ public class MyServlet extends HttpServlet {
         printWriter.println("MyServlet.doGet 4");
         printWriter.println("</h1>");
 
-        for (ZzzMaster m: list) {
+       /* for (ZzzMaster m: list) {
             printWriter.println("<ul>");
             printWriter.println("<li>" + m.getAd() +"</li>");
+            printWriter.println("</ul>");
+        }*/
+
+        for (ZzzUsers u: usersList){
+            printWriter.println("<ul>");
+            printWriter.println("<li>" + u.getAd() +"</li>");
             printWriter.println("</ul>");
         }
 
