@@ -12,13 +12,13 @@ import java.util.List;
 public class Spot {
     private Long id;
 
-    private User users;
+    private User user;//
 
-    private List<Reservation> reservations = new ArrayList<>();
+    private List<Reservation> reservation = new ArrayList<>();
 
-    public void addReservations(Reservation r){
-        r.setSpots(this);
-        this.getReservations().add(r);
+    public void addReservation(Reservation r){
+        r.setSpot(this);
+        this.getReservation().add(r);
     }
 
 }

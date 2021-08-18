@@ -9,7 +9,7 @@
             </generator>
         </id>
 
-        <many-to-one name="spots" lazy="false" class="com.tarnet.domain.Spot"
+        <many-to-one name="spot" lazy="false" class="com.tarnet.domain.Spot"
                      column="SPOT_ID" not-null="true"/>
 
     </class>

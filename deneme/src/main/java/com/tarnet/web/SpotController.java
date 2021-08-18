@@ -1,7 +1,7 @@
 package com.tarnet.web;
 
-import com.tarnet.deneme.UserRepository;
-import com.tarnet.domain.User;
+import com.tarnet.deneme.SpotRepository;
+import com.tarnet.domain.Spot;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,29 +12,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/spot")
 @RequiredArgsConstructor
-public class UserController {
-    private final UserRepository userRepository;
+public class SpotController {
+    private final SpotRepository spotRepository;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<List<UserDto>> listele(){
+    public ResponseEntity<List<SpotDto>> listele(){
 
-        List<User> list = userRepository.list();
+        List<Spot> list = spotRepository.list();
 
-        List<UserDto> cikti = UserDtoFactory.createFromUserList(list);
+        List<SpotDto> sonuc = SpotDtoFactory.createFromSpotList(list);
 
-        return ResponseEntity.ok(cikti);
+        return ResponseEntity.ok(sonuc);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<UserDto> get(@PathVariable("id") String id) {
+    public ResponseEntity<SpotDto> get(@PathVariable("id") String id) {
 
-        User user = userRepository.get(id);
+        Spot spot = spotRepository.get(Long.valueOf(id));
 
-        UserDto userDto = UserDtoFactory.createFromUser(user);
+        SpotDto spotDto = SpotDtoFactory.createFromSpot(spot);
 
-        return ResponseEntity.ok(userDto);
+        return ResponseEntity.ok(spotDto);
     }
 
 }

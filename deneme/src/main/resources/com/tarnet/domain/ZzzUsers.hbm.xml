@@ -13,7 +13,7 @@
 
         <property name="ad" column="AD" />
 
-        <bag name="spots" table="ZZZ_SPOTS" cascade="all-delete-orphan" inverse="true"
+        <bag name="spot" table="ZZZ_SPOTS" cascade="all-delete-orphan" inverse="true"
              lazy="true">
             <key column="USER_ID"/>
             <one-to-many class="com.tarnet.domain.Spot"/>

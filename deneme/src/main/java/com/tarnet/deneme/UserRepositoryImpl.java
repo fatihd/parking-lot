@@ -30,12 +30,12 @@ public class UserRepositoryImpl implements UserRepository {
             for (int j = 0; j < 3; j++) {
                 Spot s = new Spot();
 
-                u.addSpots(s);
+                u.addSpot(s);
 
                 for (int k = 0; k< 3; k++){
                     Reservation r = new Reservation();
 
-                    s.addReservations(r);
+                    s.addReservation(r);
 
                 }
             }
@@ -58,11 +58,15 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<User> list() {
-        Session session = sessionFactory.getCurrentSession();
+        return sessionFactory.getCurrentSession()
+                .createQuery("select u from User u", User.class)
+                .list();
+    }
 
-        Query<User> query = session.createQuery("select u from User u", User.class);
-
-        return query.list();
+    @Override
+    public User get(String id) {
+        return sessionFactory.getCurrentSession()
+                .get(User.class, id);
     }
 
 }

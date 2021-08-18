@@ -11,4 +11,5 @@ public interface UserRepository {
 
     List<User> list();
 
+    User get(String id);
 }

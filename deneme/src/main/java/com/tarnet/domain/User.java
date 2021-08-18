@@ -12,15 +12,15 @@ import java.util.List;
 public class User {
     private Long id;
 
-    private String ad;
-
     private int version;
 
-    private List<Spot> spots = new ArrayList<>();
+    private String ad;
 
-    public void addSpots(Spot s){
-        s.setUsers(this);
-        this.getSpots().add(s);
+    private List<Spot> spot = new ArrayList<>();
+
+    public void addSpot(Spot s){
+        s.setUser(this);
+        this.getSpot().add(s);
     }
 
 }

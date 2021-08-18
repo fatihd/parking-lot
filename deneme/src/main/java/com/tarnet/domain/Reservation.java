@@ -9,6 +9,6 @@ import lombok.experimental.FieldNameConstants;
 public class Reservation {
     private Long id;
 
-    private Spot spots;
+    private Spot spot;
 
 }

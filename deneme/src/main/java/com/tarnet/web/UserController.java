@@ -3,13 +3,12 @@ package com.tarnet.web;
 import com.tarnet.deneme.UserRepository;
 import com.tarnet.domain.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -23,20 +22,19 @@ public class UserController {
 
         List<User> list = userRepository.list();
 
-        List<UserDto> cikti = new ArrayList<>();
+        List<UserDto> cikti = UserDtoFactory.createFromUserList(list);
 
-        for (User u: list){
-            UserDto dto = new UserDto();
-
-            dto.id = u.getId();
-            dto.ad = u.getAd();
-
-            cikti.add(dto);
-
-        }
-
-        return new ResponseEntity<>(cikti,HttpStatus.OK);
+        return ResponseEntity.ok(cikti);
     }
 
+    @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<UserDto> get(@PathVariable("id") String id) {
+
+        User user = userRepository.get(id);
+
+        UserDto userDto = UserDtoFactory.createFromUser(user);
+
+        return ResponseEntity.ok(userDto);
+    }
 
 }
