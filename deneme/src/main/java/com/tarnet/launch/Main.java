@@ -39,13 +39,7 @@ public class Main {
 //        System.getProperties().putIfAbsent(
 //                "spring.profiles.active",
 //                String.join(
-//                        ",",
-////                        Profiles.ENABLE_JOBS,
-////                        "no-hsm",
-//                        "esya",
-////                        Profiles.ESYA_IMZA,
-//                        "no-jndi",
-//                        "disableDefterKontrol"
+//                        "development"
 //                )
 //        );
 
