@@ -19,7 +19,6 @@
                 <value>classpath*:com/tarnet/domain/**/*.hbm.xml</value>
             </set>
         </property>
-
         <property name="hibernateProperties">
             <props>
                 <!--<prop key="hibernate.default_schema">tiftikDs</prop>-->
