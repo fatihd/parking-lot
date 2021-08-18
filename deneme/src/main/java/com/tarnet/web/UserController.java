@@ -1,7 +1,7 @@
 package com.tarnet.web;
 
-import com.tarnet.deneme.UsersRepository;
-import com.tarnet.domain.ZzzUsers;
+import com.tarnet.deneme.UserRepository;
+import com.tarnet.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,20 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/user")
 @RequiredArgsConstructor
-public class UsersController {
-    private final UsersRepository usersRepository;
+public class UserController {
+    private final UserRepository userRepository;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<List<UsersDto>> listele(){
+    public ResponseEntity<List<UserDto>> listele(){
 
-        List<ZzzUsers> list = usersRepository.list();
+        List<User> list = userRepository.list();
 
-        List<UsersDto> cikti = new ArrayList<>();
+        List<UserDto> cikti = new ArrayList<>();
 
-        for (ZzzUsers u: list){
-            UsersDto dto = new UsersDto();
+        for (User u: list){
+            UserDto dto = new UserDto();
 
             dto.id = u.getId();
             dto.ad = u.getAd();

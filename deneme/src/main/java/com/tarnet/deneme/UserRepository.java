@@ -1,14 +1,14 @@
 package com.tarnet.deneme;
 
-import com.tarnet.domain.ZzzUsers;
+import com.tarnet.domain.User;
 
 import java.util.List;
 
-public interface UsersRepository {
+public interface UserRepository {
     void insert();
 
     /*void delete();*/
 
-    List<ZzzUsers> list();
+    List<User> list();
 
 }

@@ -9,12 +9,12 @@ public class Main {
                 "context.xml",
                 "hibernate-config.xml");
 
-        UsersRepository usersRepository = applicationContext.getBean(UsersRepository.class);
+        UserRepository userRepository = applicationContext.getBean(UserRepository.class);
 
-        usersRepository.insert();
+        userRepository.insert();
 
-        //usersRepository.delete();
+        //userRepository.delete();
 
-        //usersRepository.list();
+        //userRepository.list();
     }
 }

@@ -1,9 +1,8 @@
 package com.tarnet.deneme;
 
-import com.tarnet.domain.ZzzMaster;
-import com.tarnet.domain.ZzzReservations;
-import com.tarnet.domain.ZzzSpots;
-import com.tarnet.domain.ZzzUsers;
+import com.tarnet.domain.Reservation;
+import com.tarnet.domain.Spot;
+import com.tarnet.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,7 +15,7 @@ import java.util.List;
 @Repository
 @Transactional
 @RequiredArgsConstructor
-public class UsersRepositoryImpl implements UsersRepository {
+public class UserRepositoryImpl implements UserRepository {
     private final SessionFactory sessionFactory;
 
     @Override
@@ -24,17 +23,17 @@ public class UsersRepositoryImpl implements UsersRepository {
         Session session = sessionFactory.getCurrentSession();
 
         for (int i = 0; i < 5; i++) {
-            ZzzUsers u = new ZzzUsers();
+            User u = new User();
 
             u.setAd("Ad " + i);
 
             for (int j = 0; j < 3; j++) {
-                ZzzSpots s = new ZzzSpots();
+                Spot s = new Spot();
 
                 u.addSpots(s);
 
                 for (int k = 0; k< 3; k++){
-                    ZzzReservations r = new ZzzReservations();
+                    Reservation r = new Reservation();
 
                     s.addReservations(r);
 
@@ -49,7 +48,7 @@ public class UsersRepositoryImpl implements UsersRepository {
     public void delete() {
         Session session = sessionFactory.getCurrentSession();
 
-        ZzzUsers zzzUsers = session.get(ZzzUsers.class, -2L);
+        User zzzUsers = session.get(User.class, -2L);
 
         if (!zzzMaster.getAd().contains("DENEME"))
             throw new IllegalArgumentException("bu kayit silinemez!");
@@ -58,10 +57,10 @@ public class UsersRepositoryImpl implements UsersRepository {
     }*/
 
     @Override
-    public List<ZzzUsers> list() {
+    public List<User> list() {
         Session session = sessionFactory.getCurrentSession();
 
-        Query<ZzzUsers> query = session.createQuery("select u from ZzzUsers u", ZzzUsers.class);
+        Query<User> query = session.createQuery("select u from User u", User.class);
 
         return query.list();
     }

@@ -1,38 +1,24 @@
 package com.tarnet.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldNameConstants;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @FieldNameConstants
-@Data
-public class ZzzSpots {
+@Getter @Setter
+public class Spot {
     private Long id;
 
-    private ZzzUsers users;
+    private User users;
 
-    private List<ZzzReservations> reservations = new ArrayList<>();
+    private List<Reservation> reservations = new ArrayList<>();
 
-    public void addReservations(ZzzReservations r){
+    public void addReservations(Reservation r){
         r.setSpots(this);
         this.getReservations().add(r);
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public ZzzUsers getUsers() {
-        return users;
-    }
-
-    public void setUsers(ZzzUsers users) {
-        this.users = users;
-    }
 }
