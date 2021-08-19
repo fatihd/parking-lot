@@ -2,14 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.tarnet.domain.Reservation" table="ZZZ_RESERVATIONS">
+    <class name="com.tarnet.deneme.domain.Reservation" table="ZZZ_RESERVATIONS">
         <id name="id" column="ID">
             <generator class="sequence">
                 <param name="sequence_name">SEQ_ZZZ_RESERVATIONS</param>
             </generator>
         </id>
 
-        <many-to-one name="spot" lazy="false" class="com.tarnet.domain.Spot"
+        <many-to-one name="spot" lazy="false" class="com.tarnet.deneme.domain.Spot"
                      column="SPOT_ID" not-null="true"/>
 
     </class>

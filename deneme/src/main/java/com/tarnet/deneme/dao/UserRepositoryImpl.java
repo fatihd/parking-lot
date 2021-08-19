@@ -1,12 +1,11 @@
-package com.tarnet.deneme;
+package com.tarnet.deneme.dao;
 
-import com.tarnet.domain.Reservation;
-import com.tarnet.domain.Spot;
-import com.tarnet.domain.User;
+import com.tarnet.deneme.domain.Reservation;
+import com.tarnet.deneme.domain.Spot;
+import com.tarnet.deneme.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
@@ -35,7 +34,7 @@ public class UserRepositoryImpl implements UserRepository {
                 for (int k = 0; k< 3; k++){
                     Reservation r = new Reservation();
 
-                    s.addReservation(r);
+//                    s.addReservation(r);
 
                 }
             }

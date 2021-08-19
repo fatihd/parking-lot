@@ -1,4 +1,4 @@
-package com.tarnet.deneme;
+package com.tarnet.deneme.config;
 
 import org.hsqldb.util.DatabaseManagerSwing;
 import org.springframework.context.annotation.Bean;

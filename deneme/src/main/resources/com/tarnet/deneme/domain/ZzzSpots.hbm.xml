@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.tarnet.domain.Spot" table="ZZZ_SPOTS">
+    <class name="com.tarnet.deneme.domain.Spot" table="ZZZ_SPOTS">
         <id name="id" column="ID">
             <generator class="sequence">
                 <param name="sequence_name">SEQ_ZZZ_SPOTS</param>
@@ -12,10 +12,10 @@
         <bag name="reservation" table="ZZZ_RESERVATIONS" cascade="all-delete-orphan" inverse="true"
              lazy="true">
             <key column="SPOT_ID"/>
-            <one-to-many class="com.tarnet.domain.Reservation"/>
+            <one-to-many class="com.tarnet.deneme.domain.Reservation"/>
         </bag>
 
-        <many-to-one name="user" lazy="false" class="com.tarnet.domain.User"
+        <many-to-one name="user" lazy="false" class="com.tarnet.deneme.domain.User"
                      column="USER_ID" not-null="true"/>
 
     </class>
