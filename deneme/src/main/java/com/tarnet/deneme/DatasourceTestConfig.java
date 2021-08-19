@@ -14,9 +14,9 @@ public class DatasourceTestConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
-        dataSource.setPassword("mogan");
         dataSource.setUrl("jdbc:oracle:thin:@10.17.0.141:1521:TTK");
         dataSource.setUsername("mogan");
+        dataSource.setPassword("mogan");
         return dataSource;
     }
 }

@@ -36,12 +36,12 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-//        System.getProperties().putIfAbsent(
-//                "spring.profiles.active",
-//                String.join(
-//                        "development"
-//                )
-//        );
+        System.getProperties().putIfAbsent(
+                "spring.profiles.active",
+                String.join(
+                        "development"
+                )
+        );
 
 //        System.getProperties().putIfAbsent("logging.path", ".");
 

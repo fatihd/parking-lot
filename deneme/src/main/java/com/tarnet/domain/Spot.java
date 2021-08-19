@@ -12,7 +12,7 @@ import java.util.List;
 public class Spot {
     private Long id;
 
-    private User user;//
+    private User user;
 
     private List<Reservation> reservation = new ArrayList<>();
 
