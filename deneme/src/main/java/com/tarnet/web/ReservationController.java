@@ -1,7 +1,7 @@
 package com.tarnet.web;
 
-import com.tarnet.deneme.ReservationRepository;
-import com.tarnet.domain.Reservation;
+import com.tarnet.deneme.dao.ReservationRepository;
+import com.tarnet.deneme.domain.Reservation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

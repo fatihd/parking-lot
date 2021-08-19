@@ -1,4 +1,4 @@
-package com.tarnet.domain;
+package com.tarnet.deneme.domain;
 
 import lombok.Getter;
 import lombok.Setter;

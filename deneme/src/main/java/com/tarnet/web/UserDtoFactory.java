@@ -1,6 +1,6 @@
 package com.tarnet.web;
 
-import com.tarnet.domain.User;
+import com.tarnet.deneme.domain.User;
 
 import java.util.ArrayList;
 import java.util.List;

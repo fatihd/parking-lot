@@ -1,7 +1,7 @@
 package com.tarnet.web;
 
-import com.tarnet.deneme.SpotRepository;
-import com.tarnet.domain.Spot;
+import com.tarnet.deneme.dao.SpotRepository;
+import com.tarnet.deneme.domain.Spot;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

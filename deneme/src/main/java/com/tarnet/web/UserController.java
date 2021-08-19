@@ -1,7 +1,7 @@
 package com.tarnet.web;
 
-import com.tarnet.deneme.UserRepository;
-import com.tarnet.domain.User;
+import com.tarnet.deneme.dao.UserRepository;
+import com.tarnet.deneme.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

@@ -1,7 +1,7 @@
 package com.tarnet.servlets;
 
-import com.tarnet.deneme.UserRepository;
-import com.tarnet.domain.User;
+import com.tarnet.deneme.dao.UserRepository;
+import com.tarnet.deneme.domain.User;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletException;

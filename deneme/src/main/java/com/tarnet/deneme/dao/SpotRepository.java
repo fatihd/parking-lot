@@ -1,6 +1,6 @@
-package com.tarnet.deneme;
+package com.tarnet.deneme.dao;
 
-import com.tarnet.domain.Spot;
+import com.tarnet.deneme.domain.Spot;
 
 import java.util.List;
 
