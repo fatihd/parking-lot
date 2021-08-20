@@ -26,6 +26,9 @@ public class ReservationApplicationServiceImpl implements ReservationApplication
             LocalDateTime start,
             LocalDateTime end
     ) throws SpotAlreadyReservedException {
+
+        // TODO cakisma kontrolu
+
         Reservation reservation = new Reservation();
         reservation.setUserId(userId);
         reservation.setSpotId(spotId);
