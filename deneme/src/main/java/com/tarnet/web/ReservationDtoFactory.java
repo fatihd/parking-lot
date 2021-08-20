@@ -11,14 +11,8 @@ public class ReservationDtoFactory {
     public static ReservationDto createFromReservation(Reservation reservation) {
         ReservationDto reservationDto = new ReservationDto();
         reservationDto.setId(reservation.getId());
-        reservationDto.setSpot(createSpotDto(reservation.getSpot()));
+        reservationDto.setSpotId(reservation.getSpotId());
         return reservationDto;
-    }
-
-    private static ReservationDto.SpotDto createSpotDto(Spot spot) {
-        ReservationDto.SpotDto spotDto = new ReservationDto.SpotDto();
-        spotDto.setId(spot.getId());
-        return spotDto;
     }
 
     static List<ReservationDto> createFromReservationList(List<Reservation> list) {

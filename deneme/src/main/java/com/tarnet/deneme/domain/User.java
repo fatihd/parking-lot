@@ -9,18 +9,6 @@ import java.util.List;
 
 @FieldNameConstants
 @Getter @Setter
-public class User {
-    private Long id;
-
-    private int version;
-
+public class User extends AggregateRoot {
     private String ad;
-
-    private List<Spot> spot = new ArrayList<>();
-
-    public void addSpot(Spot s){
-        s.setUser(this);
-        this.getSpot().add(s);
-    }
-
 }
