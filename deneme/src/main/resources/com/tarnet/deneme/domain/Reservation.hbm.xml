@@ -12,8 +12,8 @@
 
         <property name="userId" column="USER_ID"/>
         <property name="spotId" column="SPOT_ID"/>
-        <property name="start" column="START"/>
-        <property name="end" column="END"/>
+        <property name="start" column="START_"/>
+        <property name="end" column="END_"/>
 
     </class>
 </hibernate-mapping>
