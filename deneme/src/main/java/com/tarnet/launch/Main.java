@@ -35,13 +35,12 @@ public class Main {
         }
     }
 
+    public static final String[] profiles = {
+            "development",
+    };
+
     public static void main(String[] args) throws Exception {
-        System.getProperties().putIfAbsent(
-                "spring.profiles.active",
-                String.join(
-                        "development"
-                )
-        );
+        System.getProperties().putIfAbsent("spring.profiles.active", String.join(",", profiles));
 
 //        System.getProperties().putIfAbsent("logging.path", ".");
 

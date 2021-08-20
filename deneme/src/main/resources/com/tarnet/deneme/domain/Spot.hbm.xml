@@ -8,15 +8,8 @@
                 <param name="sequence_name">SEQ_ZZZ_SPOTS</param>
             </generator>
         </id>
+        <version name="version"/>
 
-        <bag name="reservation" table="ZZZ_RESERVATIONS" cascade="all-delete-orphan" inverse="true"
-             lazy="true">
-            <key column="SPOT_ID"/>
-            <one-to-many class="com.tarnet.deneme.domain.Reservation"/>
-        </bag>
-
-        <many-to-one name="user" lazy="false" class="com.tarnet.deneme.domain.User"
-                     column="USER_ID" not-null="true"/>
-
+        <property name="code"/>
     </class>
 </hibernate-mapping>

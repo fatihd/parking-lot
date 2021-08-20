@@ -11,15 +11,8 @@ public class SpotDtoFactory {
     public static SpotDto createFromSpot(Spot spot) {
         SpotDto spotDto = new SpotDto();
         spotDto.setId(spot.getId());
-        spotDto.setUser(createUserDto(spot.getUser()));
+        spotDto.setCode(spot.getCode());
         return spotDto;
-    }
-
-    private static SpotDto.UserDto createUserDto(User user) {
-        SpotDto.UserDto userDto = new SpotDto.UserDto();
-        userDto.setId(user.getId());
-        userDto.setAd(user.getAd());
-        return userDto;
     }
 
     static List<SpotDto> createFromSpotList(List<Spot> list) {

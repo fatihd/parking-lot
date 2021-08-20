@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -37,6 +38,9 @@ public class ReservationRepositoryImpl implements ReservationRepository {
                 .setParameter("start", start)
                 .setParameter("end", end)
                 .getResultList();
+
+        if (idList.isEmpty())
+            return Collections.emptyList();
 
         return sessionFactory.getCurrentSession().createQuery("select s from Spot s where s.id in :idList", Spot.class)
                 .setParameter("idList", idList)
