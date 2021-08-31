@@ -1,7 +1,6 @@
 package com.tarnet.web;
 
 import com.tarnet.deneme.domain.Reservation;
-import com.tarnet.deneme.domain.Spot;
 
 import java.util.ArrayList;
 import java.util.List;

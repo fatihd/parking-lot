@@ -13,4 +13,9 @@ public class Reservation extends AggregateRoot {
     long spotId;
     LocalDateTime start;
     LocalDateTime end;
+    String status;
+
+    public void cancel() {
+        status = "CANCELLED";
+    }
 }

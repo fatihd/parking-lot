@@ -1,11 +1,7 @@
 package com.tarnet.deneme.service;
 
 import com.tarnet.deneme.domain.Spot;
-import com.tarnet.web.SpotDto;
-import lombok.Data;
-import lombok.Value;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 

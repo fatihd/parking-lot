@@ -14,6 +14,7 @@
         <property name="spotId" column="SPOT_ID"/>
         <property name="start" column="START_"/>
         <property name="end" column="END_"/>
+        <property name="status" column="STATUS"/>
 
     </class>
 </hibernate-mapping>

@@ -11,4 +11,5 @@ public class ReservationDto {
     private Long spotId;
     private LocalDateTime start;
     private LocalDateTime end;
+    private String status;
 }

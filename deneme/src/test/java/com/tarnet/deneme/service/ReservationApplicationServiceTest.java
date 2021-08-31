@@ -17,7 +17,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {ServiceConfig.class})
-//@ActiveProfiles("development")
+@ActiveProfiles("development")
 public class ReservationApplicationServiceTest {
 
     @Autowired
@@ -30,10 +30,11 @@ public class ReservationApplicationServiceTest {
     public void test() {
         long userId = -1L;
         long spotId = -2L;
+        long reservationId = -1L;
         LocalDateTime start = LocalDateTime.now().plusDays(1);
         LocalDateTime end = start.plusHours(2);
 
-        List<Spot> beforeList = service.getEmptySpots(start, end);
+/*        List<Spot> beforeList = service.getEmptySpots(start, end);
 
         Assert.assertTrue(beforeList.size() == 2);
 
@@ -41,6 +42,12 @@ public class ReservationApplicationServiceTest {
 
         List<Spot> afterList = service.getEmptySpots(start, end);
 
-        Assert.assertTrue(afterList.size() == 1);
+        Assert.assertTrue(afterList.size() == 1);*/
+
+        service.cancelReservation(userId,reservationId);
+
+        List<Spot> endList = service.getEmptySpots(start, end);
+
+        Assert.assertTrue(endList.size() == 1);
     }
 }

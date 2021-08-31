@@ -40,7 +40,12 @@ public class ReservationApplicationServiceImpl implements ReservationApplication
 
     @Override
     public void cancelReservation(long userId, long reservationId) {
-        // TODO
-        throw new IllegalArgumentException("not implemented yet");
+        Reservation reservation = repository.get(reservationId);
+
+        if (userId != reservation.getUserId()) {
+            throw new IllegalArgumentException("yetkiniz yok");
+        }
+
+        reservation.cancel();
     }
 }

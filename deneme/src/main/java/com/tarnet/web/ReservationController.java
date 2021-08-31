@@ -37,4 +37,13 @@ public class ReservationController {
         return ResponseEntity.ok(reservationDto);
     }
 
+    @RequestMapping(value = "{id}/cancel-reservation", method = RequestMethod.DELETE, produces = "application/json")
+    public ResponseEntity<Void> cancelReservation(@PathVariable("id") String id) {
+        Reservation reservation = reservationRepository.get(Long.valueOf(id));
+
+        reservation.cancel();
+
+        return ResponseEntity.noContent().build();
+    }
+
 }

@@ -33,7 +33,7 @@ public class ReservationRepositoryImpl implements ReservationRepository {
     @Override
     public List<Spot> getEmptySpots(LocalDateTime start, LocalDateTime end) {
         List<Long> idList = sessionFactory.getCurrentSession()
-                .createQuery("select r.spotId from Reservation r where r.end > :start or r.start < :end ", Long.class)
+                .createQuery("select r.spotId from Reservation r where r.end > :start or r.start < :end or r.status = 'CANCELLED'", Long.class)
                 .setParameter("start", start)
                 .setParameter("end", end)
                 .getResultList();
@@ -52,5 +52,4 @@ public class ReservationRepositoryImpl implements ReservationRepository {
         sessionFactory.getCurrentSession()
                 .merge(reservation);
     }
-
 }
